@@ -7,14 +7,12 @@
   </head>
   <body>
 
-    <!-- This is a sudo div so that we can use main.js to setup OJET dependencies.
-    But since main.js hardcoded to use 'globalBody' element, we will create a dummy
-    div here. We will not use this 'globalBody' in this demo page. -->
-    <div id="globalBody"></div>
-
     <div id="app">
+      <p>Type in your name and then tab to see output instantly.</p>
       <oj-input-text value="{{name}}"></oj-input-text>
-      <p>Hello <oj-bind-text value="[[name]]"></oj-bind-text></p>
+      <oj-bind-if test="[[name]]">
+        <p>Hello, <oj-bind-text value="[[name]]"></oj-bind-text>!</p>
+      </oj-bind-if>
     </div>
     
     <script type="text/javascript" src="js/libs/require/require.js"></script>
